@@ -3,36 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Language Switcher</title>
+    <title>Simulació de phishing</title>
     <style>
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
+            background-color: #f1f8fc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
         }
-        select {
-            margin-bottom: 20px;
+
+        header {
+            background-color: #6497AA;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            line-height: 1.6;
+        }
+
+        .content h2, .content h3 {
+            color: #055160;
+        }
+
+        .content ul {
+            list-style-type: square;
+            margin-left: 20px;
+        }
+
+        footer {
+            background-color: #6497AA;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .language-selector {
+            text-align: right;
+            margin: 10px;
+        }
+
+        .language-selector select {
+            padding: 5px;
+            font-size: 1rem;
         }
     </style>
 </head>
 <body>
+  <header><title id="title">Simulació de Phishing</title></header>
+  <div class="language-selector">
     <label for="language">Choose Language:</label>
     <select id="language" onchange="changeLanguage()">
         <option value="ca">Català</option>
         <option value="en">English</option>
         <option value="es">Español</option>
     </select>
+    </div>
     
     <div id="content">
         <div data-key="textContent"></div>
     </div>
-
+    <footer><p>LaSalle URL Campus Barcelona - Serveis TIC - <a href="https://suport.salle.url.edu"> Web de Suport</a> - +34 932902400 - <a href="mailto:helpdesk@salleurl.edu">helpdesk@salleurl.edu</a></p></footer>
     <script>
         const translations = {
             ca: {
                 textContent: `
-
 		<p>
             Hola, aquest email simulava un atac de phishing i, malauradament, no has reaccionat com s’esperava.
             Aquest cop no passa res, però cal aprendre on has fallat per tal de no caure en un phishing real.
@@ -82,12 +134,10 @@
             <li>Tenir l'antivirus actualitzat i avisar a Serveis TIC quan generi una alerta.</li>
             <li>Si vols guardar les contrasenyes, no utilitzar el mateix navegador per guardar-les. És millor utilitzar un programa, PassKeys o extensions del navegador com Proton Pass, Bitwarden o Passbolt entre altres.</li>
         </ul>
-
                 `
             },
             en: {
                 textContent: `
-
 <p>
 Hello, this email simulated a phishing attack and, unfortunately, you did not react as expected.
 This time nothing happened, but you need to learn where you went wrong so as not to fall for a real phishing.
@@ -137,13 +187,10 @@ We have brought you to this educational page and we recommend you read it. You d
 <li>Keep your antivirus updated and notify ICT Services when it generates an alert.</li>
 <li>If you want to save your passwords, do not use the same browser to save them. It is better to use a program, PassKeys or browser extensions such as Proton Pass, Bitwarden or Passbolt among others.</li>
 </ul>
-
                 `
             },
             es: {
                 textContent: `
-                  
-
 <p>
  Hola, ese email simulaba un ataque de phishing y, desgraciadamente, no has reaccionado como se esperaba.
  Esta vez no pasa nada, pero es necesario aprender dónde has fallado para no caer en un phishing real.
@@ -193,6 +240,7 @@ We have brought you to this educational page and we recommend you read it. You d
  <li>Tener el antivirus actualizado y avisar a Servicios TIC cuando genere una alerta.</li>
  <li>Si quieres guardar las contraseñas, no utilizar el mismo navegador para guardarlas. Es mejor utilizar un programa, PassKeys o extensiones del navegador como Proton Pass, Bitwarden o Passbolt entre otros.</li>
  </ul>
+
                 `
             }
         };
