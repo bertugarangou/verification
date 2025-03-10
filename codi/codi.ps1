@@ -1,4 +1,4 @@
-Start-Process "https://amazon.validation-service.salleurl.nl/etic"
+Start-Process "https://web.salleurl.edu/ph/"
 #
 $username = $env:USERNAME
 #
