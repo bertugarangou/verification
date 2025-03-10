@@ -1,113 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
 <head>
-<title>Simulacio de phishing</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulació de Phishing - Lumma Stealer</title>
+    <style>
+        /* Estils globals */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f8fc; /* Blau clar */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* Perquè el peu de pàgina es mantingui al final */
+        }
 
-<style>
-body {
-  font-family: Segoe UI;
-}
+        /* Capçalera */
+        header {
+            background-color: #6497AA; /* Blau fosc */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
 
-.main {
-  margin: 1em 1em 0;
-  width: 90%;
-}
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
 
-.phishHeader {
-  display: flex;
-  flex-wrap: wrap;
-}
+        /* Contingut principal */
+        .content {
+            flex-grow: 1; /* Permet que el contingut creixi i ocupi l'espai disponible */
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            line-height: 1.6;
+        }
 
-.phishHeader>div {
-  width: 30em;
-}
+        .content h2, .content h3 {
+            color: #055160; /* Blau fosc per als títols */
+        }
 
-.headerContent {
-  flex-grow: 4;
-}
+        .content ul {
+            list-style-type: square;
+            margin-left: 20px;
+        }
 
-.heroImage {
-  text-align: center;
-  flex-grow: 1;
-}
+        .content a {
+            color: #004C77; /* Enllaços en blau */
+            text-decoration: none;
+        }
 
-.heroImage img {
-  width: 100%;
-}
+        .content a:hover {
+            text-decoration: underline;
+        }
 
-.logoDropdown {
-  display: flex;
-  justify-content: space-between;
-}
+        footer {
+            background-color: #6497AA; /* Blau fosc */
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            border-radius: 8px;
+        }
 
-.subHeader {
-  font-size: 1.75em;
-  margin-top: 1em;
-}
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
 
-.header {
-  font-size: 2em;
-  margin-top: 1em;
-}
-
-.subText {
-  font-size: 1em;
-  margin-top: 0.8em;
-}
-
-.tipsPhishingEmails {
-  margin-top: 2em;
-  padding: 1em;
-  background-color: #E1E1E1;
-  margin-bottom: 2em;
-}
-
-.phishingEmailContent {
-  margin-top: 1em;
-  padding: 0 0 2em 0
-}
-
-.navButtons {
-  margin: auto auto;
-  border: 1px solid #C4C4C4;
-  box-sizing: border-box;
-  text-align: center;
-  width: 75%;
-  border-radius: 0.5em;
-  padding: 1em 3em;
-}
-
-.companyLogo {
-  width: 15em;
-}
-
-.companyLogo img {
-  height: 5em;
-}
-
-.navButton {
-  width: 132px;
-  background-color: #0078D4;
-  text-align: center;
-  border-radius: 2px;
-  color: #FFFFFF;
-  padding: 0.5em 1em;
-  font-weight: 500;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-
-</style>
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-
 <body>
+    <header>
+        <h1>Simulació de Phishing</h1>
+    </header>
 
-<div>CAT</div>
-<div>ES</div>
-<div>ENG</div>
+    <section class="content">
+        <p>
+            Hola, aquest email simulava un atac de phishing i, malauradament, no has reaccionat com s’esperava.
+            Aquest cop no passa res, però cal aprendre on has fallat per tal de no caure en un phishing real.
+        </p>
+        <p>
+            Us hem portat a aquesta pàgina educativa i us recomanem la seva lectura. No cal que avisis a HelpDesk perquè era un entrenament de prova. Et demanem també que no avisis als teus companys/es perquè ens cal veure com reaccionem tots davant d'aquest missatge. Moltes gràcies!
+        </p>
+        <br>
+        <br>
+        <h2>Com veure que era un phishing?</h2>
+        <h3>En el correu:</h3>
+      
+        <ul>
+            <li>L'enllaç on portava el botó, que es veu en posar el cursor a sobre, no és "amazon.es" o "amazon.com".</li>
+            <li>Els correus d'Amazon mostren els productes comprats, aquí l'atacant no sap què comptes.</li>
+            <li>La direcció de correu és "@amazon-onboarding.com" que queda amagada pel nom "Amazon.es". El domini, si es busca per Internet, diferents pàgines indiquen que és maliciós.</li>
+            <li>Si continues sense estar segur de si és phishing o no, és millor accedir a Amazon a través de la APP o la web oficial i no des del correu.</li>
+        </ul>
+        <h3>A la pàgina de redirecció</h3>
+          <img src="continue.png" alt="Imatge continuacio">
+        <ul>
+            <li>El botó porta a una pàgina que no és d'Amazon. Es veu posant el cursor a sobre</li>
+            <li>A la barra de l'adreça del navegador, es veu que el domini actual no és d'Amazon.</li>
+        </ul>
+         <h3>A la pàgina de la verificació</h3>
+      <img src="captcha.png" alt="Imatge captcha">
+        <ul>
+            <li>El domini és "amazon.validation-service.salleurl.nl/", que no pertany a Amazon (sinó a salleurl.nl) i LaSalle no té relació amb Amazon. El domini salleurl.nl no és corporatiu (sinó salleurl.edu i salle.url.edu).</li>
+            <li>Els Captchas demanen clicar un botó a la mateixa web, si et fa dura terme altres accions: és una estafa.</li>
+            <li><img src="run.png" alt="Imatge RUN"></li>
+            <li>El codi que s'enganxa amb <b>WINDOWS+V</b>, és més llarg del que es veu. Amaga un codi supusadament maliciós.</li>
+        </ul>
+        <br>
+        <br>
+        <h2>Què hauria passat en un cas real?</h2>
+        <p>El phishing simulava un malware anomenat Lumma Stealer: un robador de credencials personals i corporatives.</p>
+        <p>Lumma Stealer és un malware dissenyat per robar credencials d'usuaris a través de diversos canals, incloent-hi navegadors web, dispositius mòbils i sistemes operatius com Windows, macOS (Apple) i Linux (Android i ordinadors). El malware roba contrasenyes i dades personals guardades en els navegadors com Google Chrome, Safari, Firefox, Edge, Brave, etc. Sí, roba les contrasenyes guardades en el navegador. Els navegadors <b>no són un mètode segur per guardar credencials.</b></p>
 
+        <h3>Com funciona?</h3>
+        <p>Quan has fet <b>WINDOWS+R</b>, has obert un executador de codi. La web t'ha copiat automàticament un codi. En fer <b>ENTER</b>, l'has executat. La comanda era: <span style="font-family:Consolas; color: #999">[codi maliciós] # "Comprovació de seguretat - ID de verificació: 3836"</span>, de manera que només veies la segona part. El nostre codi, en aquest cas, no era maliciós.</p>
+
+        <h3>Per què és perillós?</h3>
+        <p>Aquest tipus de malware, els Stealers, roben credencials de <b>totes les webs on tens la contrasenya guardada.</b></p>
+
+        <h3>Mesures de seguretat</h3>
+        <p>Per evitar convertir-se en víctima d'un Stealer, és important:</p>
+        <ul>
+            <li>Utilitzar autenticació en dos passos (2FA) en tots els comptes.</li>
+            <li>Mantenir l'ordinador i mòbil actualitzat.</li>
+            <li>Evitar descarregar arxius o enllaços sospitosos i no fer cas a totes les ordres sense saber què s'està fent.</li>
+            <li>Tenir l'antivirus actualitzat i avisar a Serveis TIC quan generi una alerta.</li>
+            <li>Si vols guardar les contrasenyes, no utilitzar el mateix navegador per guardar-les. És millor utilitzar un programa, PassKeys o extensions del navegador com Proton Pass, Bitwarden o Passbolt entre altres.</li>
+        </ul>
+
+        <footer>
+            <p>LaSalle URL Campus Barcelona - Serveis TIC - <a href="https://suport.salle.url.edu"> Web de Suport</a> - +34 932902400 - <a href="mailto:helpdesk@salleurl.edu">helpdesk@salleurl.edu</a></p>
+        </footer>
+    </section>
 </body>
 </html>
