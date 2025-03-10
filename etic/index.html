@@ -3,156 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulació de Phishing - Lumma Stealer</title>
+    <title>Language Switcher</title>
     <style>
-        /* General Styles */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f1f8fc;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-        }
-
-        header {
-            background-color: #6497AA;
-            color: white;
+            max-width: 800px;
+            margin: auto;
             padding: 20px;
-            text-align: center;
         }
-
-        .content {
-            flex-grow: 1;
-            padding: 20px;
-            max-width: 900px;
-            margin: 0 auto;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            line-height: 1.6;
-        }
-
-        .content h2, .content h3 {
-            color: #055160;
-        }
-
-        .content ul {
-            list-style-type: square;
-            margin-left: 20px;
-        }
-
-        footer {
-            background-color: #6497AA;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            font-size: 0.9rem;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            border-radius: 8px;
-        }
-
-        .language-selector {
-            text-align: right;
-            margin: 10px;
-        }
-
-        .language-selector select {
-            padding: 5px;
-            font-size: 1rem;
+        select {
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-
-    <header>
-        <h1 id="title">Simulació de Phishing</h1>
-    </header>
-
-    <div class="language-selector">
-        <label for="language">🌍 </label>
-        <select id="language" onchange="changeLanguage()">
-            <option value="ca">Català</option>
-            <option value="es">Castellano</option>
-            <option value="en">English</option>
-        </select>
+    <label for="language">Choose Language:</label>
+    <select id="language" onchange="changeLanguage()">
+        <option value="ca">Català</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+    </select>
+    
+    <div id="content">
+        <div data-key="textContent"></div>
     </div>
-
-    <section class="content">
-        <p id="intro"></p>
-        <h2 id="section1-title"></h2>
-        <p id="section1-content"></p>
-        <h3 id="section2-title"></h3>
-        <ul id="security-measures"></ul>
-    </section>
-    <footer>
-            <p>LaSalle URL Campus Barcelona - Serveis TIC - <a href="https://suport.salle.url.edu"> Web de Suport</a> - +34 932902400 - <a href="mailto:helpdesk@salleurl.edu">helpdesk@salleurl.edu</a></p>
-        </footer>
 
     <script>
         const translations = {
             ca: {
-                title: "Simulació de Phishing",
-                intro: "Hola, aquest email simulava un atac de phishing i, malauradament, no has reaccionat com s’esperava. Aquest cop no passa res, però cal aprendre on has fallat per tal de no caure en un phishing real.",
-                section1Title: "Què hauria passat en un cas real?",
-                section1Content: "El phishing simulava un malware anomenat Lumma Stealer: un robador de credencials personals i corporatives.",
-                section2Title: "Mesures de seguretat",
-                securityMeasures: [
-                    "Utilitzar autenticació en dos passos (2FA) en tots els comptes.",
-                    "Mantenir l'ordinador i mòbil actualitzat.",
-                    "Evitar descarregar arxius o enllaços sospitosos i no fer cas a totes les ordres sense saber què s'està fent.",
-                    "Tenir l'antivirus actualitzat i avisar a Serveis TIC quan generi una alerta."
-                ]
-            },
-            es: {
-                title: "Simulación de Phishing",
-                intro: "Hola, este correo electrónico simulaba un ataque de phishing y, lamentablemente, no has reaccionado como se esperaba. Esta vez no pasa nada, pero es importante aprender en qué has fallado para no caer en un phishing real.",
-                section1Title: "¿Qué habría pasado en un caso real?",
-                section1Content: "El phishing simulaba un malware llamado Lumma Stealer: un ladrón de credenciales personales y corporativas.",
-                section2Title: "Medidas de seguridad",
-                securityMeasures: [
-                    "Utilizar autenticación en dos pasos (2FA) en todas las cuentas.",
-                    "Mantener el ordenador y el móvil actualizados.",
-                    "Evitar descargar archivos o enlaces sospechosos y no hacer caso a todas las órdenes sin saber qué se está haciendo.",
-                    "Tener el antivirus actualizado y avisar a Servicios TIC cuando genere una alerta."
-                ]
+                textContent: `
+
+		<p>
+            Hola, aquest email simulava un atac de phishing i, malauradament, no has reaccionat com s’esperava.
+            Aquest cop no passa res, però cal aprendre on has fallat per tal de no caure en un phishing real.
+        </p>
+        <p>
+            Us hem portat a aquesta pàgina educativa i us recomanem la seva lectura. No cal que avisis a HelpDesk perquè era un entrenament de prova. Et demanem també que no avisis als teus companys/es perquè ens cal veure com reaccionem tots davant d'aquest missatge. Moltes gràcies!
+        </p>
+        <br>
+        <br>
+        <h2>Com veure que era un phishing?</h2>
+        <h3>En el correu:</h3>
+        <ul>
+            <li>L'enllaç on portava el botó, que es veu en posar el cursor a sobre, no és "amazon.es" o "amazon.com".</li>
+            <li>Els correus d'Amazon mostren els productes comprats, aquí l'atacant no sap què comptes.</li>
+            <li>La direcció de correu és "@amazon-onboarding.com" que queda amagada pel nom "Amazon.es". El domini, si es busca per Internet, diferents pàgines indiquen que és maliciós.</li>
+            <li>Si continues sense estar segur de si és phishing o no, és millor accedir a Amazon a través de la APP o la web oficial i no des del correu.</li>
+        </ul>
+        <h3>A la pàgina de redirecció</h3>
+        <ul>
+            <li>El botó porta a una pàgina que no és d'Amazon. Es veu posant el cursor a sobre</li>
+            <li>A la barra de l'adreça del navegador, es veu que el domini actual no és d'Amazon.</li>
+        </ul>
+         <h3>A la pàgina de la verificació</h3>
+        <ul>
+            <li>El domini és "amazon.validation-service.salleurl.nl/", que no pertany a Amazon (sinó a salleurl.nl) i LaSalle no té relació amb Amazon. El domini salleurl.nl no és corporatiu (sinó salleurl.edu i salle.url.edu).</li>
+            <li>Els Captchas demanen clicar un botó a la mateixa web, si et fa dura terme altres accions: és una estafa.</li>
+            <li>El codi que s'enganxa amb <b>WINDOWS+V</b>, és més llarg del que es veu. Amaga un codi supusadament maliciós.</li>
+        </ul>
+        <br>
+        <br>
+        <h2>Què hauria passat en un cas real?</h2>
+        <p>El phishing simulava un malware anomenat Lumma Stealer: un robador de credencials personals i corporatives.</p>
+        <p>Lumma Stealer és un malware dissenyat per robar credencials d'usuaris a través de diversos canals, incloent-hi navegadors web, dispositius mòbils i sistemes operatius com Windows, macOS (Apple) i Linux (Android i ordinadors). El malware roba contrasenyes i dades personals guardades en els navegadors com Google Chrome, Safari, Firefox, Edge, Brave, etc. Sí, roba les contrasenyes guardades en el navegador. Els navegadors <b>no són un mètode segur per guardar credencials.</b></p>
+
+        <h3>Com funciona?</h3>
+        <p>Quan has fet <b>WINDOWS+R</b>, has obert un executador de codi. La web t'ha copiat automàticament un codi. En fer <b>ENTER</b>, l'has executat. La comanda era: <span style="font-family:Consolas; color: #999">[codi maliciós] # "Comprovació de seguretat - ID de verificació: 3836"</span>, de manera que només veies la segona part. El nostre codi, en aquest cas, no era maliciós.</p>
+
+        <h3>Per què és perillós?</h3>
+        <p>Aquest tipus de malware, els Stealers, roben credencials de <b>totes les webs on tens la contrasenya guardada.</b></p>
+
+        <h3>Mesures de seguretat</h3>
+        <p>Per evitar convertir-se en víctima d'un Stealer, és important:</p>
+        <ul>
+            <li>Utilitzar autenticació en dos passos (2FA) en tots els comptes.</li>
+            <li>Mantenir l'ordinador i mòbil actualitzat.</li>
+            <li>Evitar descarregar arxius o enllaços sospitosos i no fer cas a totes les ordres sense saber què s'està fent.</li>
+            <li>Tenir l'antivirus actualitzat i avisar a Serveis TIC quan generi una alerta.</li>
+            <li>Si vols guardar les contrasenyes, no utilitzar el mateix navegador per guardar-les. És millor utilitzar un programa, PassKeys o extensions del navegador com Proton Pass, Bitwarden o Passbolt entre altres.</li>
+        </ul>
+
+                `
             },
             en: {
-                title: "Phishing Simulation",
-                intro: "Hello, this email simulated a phishing attack, and unfortunately, you did not react as expected. This time, nothing happens, but it's important to learn from this mistake to avoid falling for a real phishing attack.",
-                section1Title: "What would have happened in a real case?",
-                section1Content: "The phishing attack simulated malware called Lumma Stealer: a credential-stealing malware.",
-                section2Title: "Security Measures",
-                securityMeasures: [
-                    "Use two-factor authentication (2FA) on all accounts.",
-                    "Keep your computer and mobile device updated.",
-                    "Avoid downloading suspicious files or links and do not follow commands without knowing what you are doing.",
-                    "Keep your antivirus updated and report any alerts to IT Services."
-                ]
+                textContent: `
+
+<p>
+Hello, this email simulated a phishing attack and, unfortunately, you did not react as expected.
+This time nothing happened, but you need to learn where you went wrong so as not to fall for a real phishing.
+</p>
+<p>
+We have brought you to this educational page and we recommend you read it. You do not need to notify HelpDesk because it was a test training. We also ask that you do not notify your colleagues because we need to see how we all react to this message. Thank you very much!
+</p>
+<br>
+<br>
+<h2>How to tell if it was phishing?</h2>
+<h3>In the email:</h3>
+<ul>
+<li>The link to the button, which you can see when you hover over it, is not "amazon.es" or "amazon.com".</li>
+<li>Amazon emails show the products purchased, here the attacker does not know what you are counting.</li>
+<li>The email address is "@amazon-onboarding.com" which is hidden by the name "Amazon.es". If you search for the domain on the Internet, different pages indicate that it is malicious.</li>
+<li>If you are still not sure if it is phishing or not, it is better to access Amazon through the APP or the official website and not from the email.</li>
+</ul>
+<h3>On the redirection page</h3>
+<ul>
+<li>The button takes you to a page that is not from Amazon. It is visible by placing the cursor over it</li>
+<li>In the browser address bar, it is visible that the current domain is not from Amazon.</li>
+</ul>
+<h3>On the verification page</h3>
+<ul>
+<li>The domain is "amazon.validation-service.salleurl.nl/", which does not belong to Amazon (but to salleurl.nl) and LaSalle has no relationship with Amazon. The domain salleurl.nl is not corporate (but to salleurl.edu and salle.url.edu).</li>
+<li>The Captchas ask you to click a button on the same website, if it makes you take other actions: it is a scam.</li>
+<li>The code that is pasted with <b>WINDOWS+V</b>, is longer than it looks. It hides supposedly malicious code.</li>
+</ul>
+<br>
+<br>
+<h2>What would have happened in a real case?</h2>
+<p>The phishing simulated a malware called Lumma Stealer: a personal and corporate credential stealer.</p>
+<p>Lumma Stealer is malware designed to steal user credentials through various channels, including web browsers, mobile devices, and operating systems such as Windows, macOS (Apple), and Linux (Android and computers). The malware steals passwords and personal data stored in browsers such as Google Chrome, Safari, Firefox, Edge, Brave, etc. Yes, it steals passwords stored in the browser. Browsers <b>are not a secure method for storing credentials.</b></p>
+
+<h3>How does it work?</h3>
+<p>When you did <b>WINDOWS+R</b>, you opened a code execution window. The website automatically copied a code for you. By pressing <b>ENTER</b>, you executed it. The command was: <span style="font-family:Consolas; color: #999">[malicious code] # "Security check - Verification ID: 3836"</span>, so you only saw the second part. Our code, in this case, was not malicious.</p>
+
+<h3>Why is it dangerous?</h3>
+<p>This type of malware, Stealers, steal credentials from <b>all the websites where you have saved your password.</b></p>
+
+<h3>Security measures</h3>
+<p>To avoid becoming a victim of a Stealer, it is important to:</p>
+<ul>
+<li>Use two-step authentication (2FA) on all accounts.</li>
+<li>Keep your computer and mobile updated.</li>
+<li>Avoid downloading suspicious files or links and ignore all commands without knowing what you are doing.</li>
+<li>Keep your antivirus updated and notify ICT Services when it generates an alert.</li>
+<li>If you want to save your passwords, do not use the same browser to save them. It is better to use a program, PassKeys or browser extensions such as Proton Pass, Bitwarden or Passbolt among others.</li>
+</ul>
+
+                `
+            },
+            es: {
+                textContent: `
+                  
+
+<p>
+ Hola, ese email simulaba un ataque de phishing y, desgraciadamente, no has reaccionado como se esperaba.
+ Esta vez no pasa nada, pero es necesario aprender dónde has fallado para no caer en un phishing real.
+ </p>
+ <p>
+ Le hemos llevado a esta página educativa y le recomendamos su lectura. No hace falta que avises a HelpDesk porque era un entrenamiento de prueba. Te pedimos también que no avises a tus compañeros/as porque necesitamos ver cómo reaccionamos todos ante este mensaje. ¡Muchas gracias!
+ </p>
+ <br>
+ <br>
+ <h2>¿Cómo ver que era un phishing?</h2>
+ <h3>En el correo:</h3>
+ <ul>
+ <li>El enlace donde llevaba el botón, que se ve al poner el cursor encima, no es "amazon.es" o "amazon.com".</li>
+ <li>Los correos de Amazon muestran los productos comprados, aquí el atacante no sabe qué cuentas.</li>
+ <li>La dirección de correo es "@amazon-onboarding.com" que queda escondida por el nombre "Amazon.es". El dominio, si se busca por Internet, distintas páginas indican que es malicioso.</li>
+ <li>Si sigues sin estar seguro de si es phishing o no, es mejor acceder a Amazon a través de la APP o la web oficial y no desde el correo.</li>
+ </ul>
+ <h3>En la página de redirección</h3>
+ <ul>
+ <li>El botón lleva a una página que no es de Amazon. Se ve poniendo el cursor encima</li>
+ <li>En la barra de la dirección del navegador, se ve que el dominio actual no es de Amazon.</li>
+ </ul>
+ <h3>En la página de la verificación</h3>
+ <ul>
+ <li>El dominio es "amazon.validation-service.salleurl.nl/", que no pertenece a Amazon (sino a salleurl.nl) y LaSalle no tiene relación con Amazon. El dominio salleurl.nl no es corporativo (sino salleurl.edu y salle.url.edu).</li>
+ <li>Los Captchas piden clicar un botón en la misma web, si te lleva a cabo otras acciones: es una estafa.</li>
+ <li>El código que se engancha con <b>WINDOWS+V</b>, es más largo de lo que se ve. Esconde un código supuestamente malicioso.</li>
+ </ul>
+ <br>
+ <br>
+ <h2>¿Qué habría ocurrido en un caso real?</h2>
+ <p>El phishing simulaba un malware llamado Lumma Stealer: un robo de credenciales personales y corporativas.</p>
+ <p>Lumma Stealer es un malware diseñado para robar credenciales de usuarios a través de varios canales, incluyendo navegadores web, dispositivos móviles y sistemas operativos como Windows, macOS (Apple) y Linux (Android y ordenadores). El malware roba contraseñas y datos personales guardados en los navegadores como Google Chrome, Safari, Firefox, Edge, Brave, etc. Sí, roba las contraseñas guardadas en su navegador. Los navegadores <b>no son un método seguro para guardar credenciales.</b></p>
+
+ <h3>¿Cómo funciona?</h3>
+ <p>Cuando has hecho <b>WINDOWS+R</b>, has abierto un ejecutador de código. La web te ha copiado automáticamente un código. Al hacer <b>ENTER</b>, lo has ejecutado. El pedido era: <span style="font-family:Consolas; color: #999">[código malicioso] # "Comprobación de seguridad - ID de verificación: 3836"</span>, por lo que sólo veías la segunda parte. Nuestro código, en este caso, no era malicioso.</P>
+
+ <h3>¿Por qué es peligroso?</h3>
+ <p>Este tipo de malware, los Stealers, roban credenciales de <b>todas las webs donde tienes la contraseña guardada.</b></p>
+
+ <h3>Medidas de seguridad</h3>
+ <p>Para evitar convertirse en víctima de un Stealer, es importante:</p>
+ <ul>
+ <li>Utilizar autenticación en dos pasos (2FA) en todas las cuentas.</li>
+ <li>Mantener el ordenador y móvil actualizado.</li>
+ <li>Evitar descargar archivos o enlaces sospechosos y no hacer caso a todas las órdenes sin saber qué se está haciendo.</li>
+ <li>Tener el antivirus actualizado y avisar a Servicios TIC cuando genere una alerta.</li>
+ <li>Si quieres guardar las contraseñas, no utilizar el mismo navegador para guardarlas. Es mejor utilizar un programa, PassKeys o extensiones del navegador como Proton Pass, Bitwarden o Passbolt entre otros.</li>
+ </ul>
+                `
             }
         };
 
         function changeLanguage() {
-            const selectedLang = document.getElementById("language").value;
-            document.getElementById("title").textContent = translations[selectedLang].title;
-            document.getElementById("intro").textContent = translations[selectedLang].intro;
-            document.getElementById("section1-title").textContent = translations[selectedLang].section1Title;
-            document.getElementById("section1-content").textContent = translations[selectedLang].section1Content;
-            document.getElementById("section2-title").textContent = translations[selectedLang].section2Title;
-
-            const securityList = document.getElementById("security-measures");
-            securityList.innerHTML = "";
-            translations[selectedLang].securityMeasures.forEach(item => {
-                const li = document.createElement("li");
-                li.textContent = item;
-                securityList.appendChild(li);
-            });
+            const selectedLang = document.getElementById('language').value;
+            document.querySelector('[data-key="textContent"]').innerHTML = translations[selectedLang].textContent;
         }
-    </script>
 
+        // Set default language to Catalan on load
+        window.onload = () => {
+            document.getElementById('language').value = 'ca';
+            changeLanguage();
+        };
+    </script>
 </body>
 </html>
-
