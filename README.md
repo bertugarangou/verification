@@ -1,1 +1,2 @@
-
+### Nota important
+L'ús d'aquest contingut és únicmanet didàctic i ha servir per una campanya de phishing ètica autoritzada i avalada per l'entitat que ha rebut la campanya. Qualsevol ús, ètic, indegut o de qualsevol forma, versió o menció en un entorn diferent a l'original és una coincidència o no s'ha autoritzat. No s'acceptaran queixes de funcionament i qualsevol acusació de culpavilitat o autoria serà denegada.
